@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>หน้าเเรกของเว็บไซต์</title>
+        {% block title %}
+        {% endblock %}
+        <style>
+            body { height: 100%; margin: 0; font-family: sans-serif; }
+            body { display: grid; grid-template-rows: auto auto 1fr auto; min-height: 100vh; }
+            .nav-link { color: white; text-decoration: none; margin-left: 20px; }
+            .nav-link:hover { text-decoration: underline; }
+         
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.wallpaperscraft.com/image/single/girl_night_starry_sky_160928_300x168.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-text {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+        }
+        </style>
+    </head>
+    <body>
+        <nav style="background-color: #222; color: white; display: flex; justify-content: space-between; align-items: center; padding: 15px 30px;">
+            <div style="font-weight: bold; font-size: 18px;">ICT12367 SPU</div>
+            <div>
+                <a href="/" class="nav-link">หน้าแรก</a>
+                <a href="/about" class="nav-link">เกี่ยวกับเรา</a>
+                <a href="/form" class="nav-link">แบบฟอร์ม</a>
+            </div>
+        </nav>
+        <div class="hero-section">
+            <h1 class="hero-text">ยินดีต้อนรับสู่เว็บไซต์ของรายวิชา ICT12367</h1>
+        </div>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer style="background-color: #333; color: white; text-align: center; padding: 15px; margin-top: 20px; font-size: 14px;">
+        © 2024 ICT12367 SPU | Information Technology
+        </footer>
+    </body>
+</html>
